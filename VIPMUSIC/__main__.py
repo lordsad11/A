@@ -41,7 +41,7 @@ async def init():
     await userbot.start()
     await VIP.start()
     await VIP.decorators()
-    LOGGER("VIPMUSIC").info("۞\n♨️ᴀɪᴜ ✘ ᴍᴜꜱɪᴄ♨️\n۞"
+    LOGGER("VIPMUSIC").info("۞\nᴅᴏɴᴀʟ ✗ ʀᴏʙᴏᴛ\n۞"
     )
     await idle()
     if len(argv) not in (1, 3, 4):
@@ -51,7 +51,7 @@ async def init():
                 
     await app.stop()
     await userbot.stop()
-    LOGGER("VIPMUSIC").info("۞\n♨️ᴀɪᴜ ✘ ᴍᴜꜱɪᴄ♨️\n۞")
+    LOGGER("VIPMUSIC").info("۞\nᴅᴏɴᴀʟ ✗ ʀᴏʙᴏᴛ\n۞")
     
 
 if __name__ == "__main__":
