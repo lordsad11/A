@@ -1,327 +1,162 @@
-HELP_1 = """🙄 **<u>🌸دستورات مدیر:</u>**
+HELP_1 = """✅**<u>Admin Commands:</u>**
 
+**c** stands for channel play.
 
+/pause or /cpause - Pause the playing music.
+/resume or /cresume- Resume the paused music.
+/mute or /cmute- Mute the playing music.
+/unmute or /cunmute- Unmute the muted music.
+/skip or /cskip- Skip the current playing music.
+/stop or /cstop- Stop the playing music.
+/shuffle or /cshuffle- Randomly shuffles the queued playlist.
+/seek or /cseek - Forward Seek the music to your duration
+/seekback or /cseekback - Backward Seek the music to your duration
+/restart - Restart bot for your chat .
 
-Ƈ 𝚂ᴛᴀɴᴅ𝚜 Ƒᴏʀ Ƈʜᴀɴɴᴇʟ Ƥʟᴀʏ.
-
-/pause » ☀︎︎❥︎ توقف پخش موسیقی.
-/resume » ☀︎︎❥︎ موسیقی متوقف شده را از سر بگیرید.
-/mute » ☀︎︎❥︎ صدای پخش موسیقی را قطع کنید.
-/unmute » ☀︎︎❥︎ موسیقی بی صدا را خاموش کنید.
-/skip » ☀︎︎❥︎ از پخش موسیقی فعلی رد شوید.
-/stop » ☀︎︎❥︎ پخش موسیقی را متوقف کنید.
-/shuffle » ☀︎︎❥︎ به طور تصادفی صف را با هم مخلوط می کند.
-/seek » ☀︎︎❥︎ به جلو به دنبال موسیقی به مدت زمان خود
-/seekback » ☀︎︎❥︎ به عقب به دنبال موسیقی به مدت زمان خود را
-/restart » ☀︎︎❥︎ ربات را برای چت خود راه اندازی مجدد کنید .
-
-
-🌸Ƨᴘᴇᴄɪғɪᴄ Ƨᴋɪᴘ:
-/skip » [Ɲᴜᴍʙᴇʀ(Єxᴀᴍᴘʟᴇ: 3)] 
-    -☀︎︎❥︎ موسیقی را به مثال شماره در صف مشخص شده پرش کنید: /Ƨᴋɪᴘ 3 موسیقی را به موسیقی ردیف سوم رد می کند و موسیقی 1 و 2 را در صف نادیده می گیرد.
-
-🌸Լᴏᴏᴘ Ƥʟᴀʏ:
-/loop » [Єɴᴀʙʟᴇ/Ɗɪsᴀʙʟᴇ] Ơʀ [Ɲᴜᴍʙᴇʀs Ɓᴇᴛᴡᴇᴇɴ 1-10] 
-    -☀︎︎❥︎ هنگامی که ربات فعال می شود، در حال پخش موسیقی را به 1-10 بار در چت صوتی حلقه می کند. پیش فرض 10 بار.
-
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ"""
-
-HELP_2 = """😜 **<u>🌸احراز هویت کاربران:</u>**
-کاربران معتبر می توانند از دستورات مدیریت بدون حقوق مدیر در چت شما استفاده کنند.
-
-/auth  [Ʋsᴇʀɴᴀᴍᴇ] » ☀︎︎❥︎ یک کاربر را به لیست تأیید گروه اضافه کنید.
-/unauth [Ʋsᴇʀɴᴀᴍᴇ] » ☀︎︎❥︎ حذف یک کاربر از لیست احراز هویت گروه.
-/authusers » ☀︎︎❥︎ لیست احراز هویت گروه را بررسی کنید.
-
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ"""
-
-HELP_3 = """<b>ویژگی لیست سیاه</b> [فقط برای سودوها]
-😒 **<u>چت لیست سیاه :</u>**
-
-/blacklistchat [ᴄʜᴀᴛ ɪᴅ] » لیست سیاه چت از استفاده از ربات.
-
-/whitelistchat [ᴄʜᴀᴛ ɪᴅ] » چت در لیست سیاه را در لیست سفید قرار دهید.
-
-/blacklistedchat » لیستی از چت های لیست سیاه را نشان می دهد.
-
-
-😤 **<u>ʙʟᴏᴄᴋ ᴜsᴇʀs:</u>**
-
-/block [نام کاربری یا پاسخ به یک] » شروع به نادیده گرفتن چوتیا می کند، به طوری که نمی تواند از دستورات ربات استفاده کند.
-
-/unblock [نام کاربری یا پاسخ به یک کاربر] » کاربر مسدود شده را رفع انسداد می کند.
-
-/blockedusers » نمایش لیست کاربران مسدود شده.
-
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ"""
-
-HELP_4 = """🍒 **<u>قابلیت پخش</u>** [فقط برای سودوها] :
-
-/broadcast [پیام دهید یا به یک پیام پاسخ دهید] » پیامی را برای چت های ارائه شده ربات پخش کنید.
-
-<u>حالت های پخش:</u>
-**-pin** » پیام های پخش شده خود را در چت های ارائه شده پینگ کنید.
-**-pinloud** » پیام پخش شده خود را در چت های ارائه شده پینگ کنید و برای اعضا اعلان ارسال کنید.
-**-user** » پیام را برای کاربرانی که ربات شما را راه اندازی کرده اند پخش می کند.
-**-assistant** » پیام خود را از حساب دستیار ربات پخش کنید.
-**-nobot** » ربات را مجبور می کند که پیام را پخش نکند..
-
-**ᴇxᴀᴍᴩʟᴇ:** `/broadcast -user -assistant -pin پخش آزمایشی`
-
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ
+✅<u>**Specific Skip:**</u>
+/skip or /cskip [Number(example: 3)] 
+    - Skips music to a the specified queued number. Example: /skip 3 will skip music to third queued music and will ignore 1 and 2 music in queue.
 """
-HELP_5 = """😉 **<u>اضافی :</u>**
 
-/loop [غیرفعال/فعال] ᴏʀ [بین 1:10] 
-» وقتی ربات فعال شود، جریان فعلی در حال پخش را 10 بار یا به تعداد حلقه های درخواستی پخش می کند.
 
-/shuffle » آهنگ های در صف را به هم بزنید.
+HELP_2 = """✅<u>**Play Commands:**</u>
 
-/seek » جریان را در مدت زمان معین جستجو کنید.
+Available Commands = play , vplay , cplay
+ForcePlay Commands = playforce , vplayforce , cplayforce
 
-/seekback » به عقب جریان را به مدت زمان داده شده جستجو کنید.
+**c** stands for channel play.
+**v** stands for video play.
+**force** stands for force play.
 
-/lyrics [sᴏɴɢ ɴᴀᴍᴇ] » متن آهنگ درخواستی را جستجو کنید و نتایج را ارسال کنید.
+/play or /vplay or /cplay  - Bot will start playing your given query on voice chat or Stream live links on voice chats.
+/playforce or /vplayforce or /cplayforce -  **Force Play** stops the current playing track on voice chat and starts playing the searched track instantly without disturbing/clearing queue.
+/channelplay [Chat username or id] or [Disable] - Connect channel to a group and stream music on channel's voice chat from your group.
 
-/shayri , /love , /gf , /bf » برای شریک زندگی خود شریری بگیرید..
 
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ"""
+✅**<u>Bot's Server Playlists:</u>**
+/playlist  - Check Your Saved Playlist On Servers.
+/deleteplaylist - Delete any saved music in your playlist
+/play  - Start playing Your Saved Playlist from Servers."""
 
-HELP_6 = """🌸**<u>لیست پخش سرور ربات:</u>**
 
-/playlist » ☀︎︎❥︎ لیست پخش ذخیره شده خود را در سرورها بررسی کنید.
+HELP_3 = """✅<u>**Bot Commands:**</u>
 
-/deleteplaylist » ☀︎︎❥︎ هر موسیقی ذخیره شده در لیست پخش خود را حذف کنید
+/stats - Get Top 10 Tracks Global Stats, Top 10 Users of bot, Top 10 Chats on bot, Top 10 Played in a chat etc etc.
 
-/play » ☀︎︎❥︎ پخش لیست پخش ذخیره شده خود را از سرورها شروع کنید.
+/sudolist - Check Sudo Users of Nezuko Music Bot
 
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ"""
+/lyrics [Music Name] - Searches Lyrics for the particular Music on web.
 
-HELP_7 = """⚡**دستورات پینگ :**
+/song [Track Name] or [YT Link] - Download any track from youtube in mp3 or mp4 formats.
 
-/ping » ☀︎︎❥︎ ربات را پینگ کنید و آمار رم، CPU و غیره ربات را بررسی کنید.
+/player -  Get a interactive Playing Panel.
 
-/stats » ☀︎︎❥︎ دریافت 10 آهنگ برتر آمار جهانی، 10 کاربر برتر ربات، 10 چت برتر در ربات، 10 آهنگ برتر پخش شده در چت و غیره.
+**c** stands for channel play.
 
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ"""
+/queue or /cqueue- Check Queue List of Music."""
 
-HELP_8 = """🌸**<u>دستورات پخش:</u>**
+HELP_4 = """✅<u>**Extra  Commands:**</u>
+/start - Start the Music Bot.
+/help  - Get Commands Helper Menu with detailed explanations of commands.
+/ping- Ping the Bot and check Ram, Cpu etc stats of Bot.
 
-دستور موجود = play , Vplay , Play
+✅<u>**Group Settings:**</u>
+/settings - Get a complete group's settings with inline buttons
 
-دستورات PlayForce = PlayForce , 𝗏PlayForce , ƇPlayForce
 
-**ᴄ** مخفف پخش کانال.
-**ᴠ** مخفف پخش ویدئو است.
-force stands for force play.
+/playmode - Get a complete play settings panel with buttons where you can set your group's play settings. 
+"""
 
-/play  Ơʀ /vplay  Ơʀ /cplay » ☀︎︎❥︎ ربات شروع به پخش درخواست داده شده شما در چت صوتی یا پخش لینک های زنده در چت صوتی می کند.
+HELP_5 = """🔰**<u>Sudo Commands :</u>**
+/addsudo [Username or Reply to a user]
+/delsudo [Username or Reply to a user]
 
-/playforce  ᴏʀ /vplayforce  ᴏʀ /cplayforce » ☀︎︎❥︎  پخش اجباری آهنگ پخش فعلی را در چت صوتی متوقف می‌کند و آهنگ جستجو شده را فوراً بدون ایجاد مزاحمت/پاک کردن صف شروع می‌کند.
+📈**<u>STATS COMMANDS:</u>**
+/activevoice - Check active voice chats on bot.
+/activevideo - Check active video calls on bot.
+/stats - Check Bots Stats
 
-/channelplay  [نام کاربری یا شناسه چت] Ơʀ [غیرفعال] » ☀︎︎❥︎ کانال را به یک گروه متصل کنید و موسیقی را در کانال های چت صوتی از گروه خود پخش کنید.
+⚠️**<u>BLACKLIST CHAT FUNCTION:</u>**
+/blacklistchat [CHAT_ID] - Blacklist any chat from using Music Bot
+/whitelistchat [CHAT_ID] - Whitelist any blacklisted chat from using Music Bot
+/blacklistedchat - Check all blacklisted chats.
 
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ"""
 
-HELP_9 = """🥀 **<u>دستورات مدیر و ادمین ها :</u>**
+👤**<u>GBAN FUNCTION:</u>**
+/gban [Username or Reply to a user] - Gban a user from bot's served chat and stop him from using your bot.
+/ungban [Username or Reply to a user] - Remove a user from Bot's gbanned List and allow him for using your bot
+/gbannedusers - Check Gbanned Users Lists
 
-🥶 **<u>ʜᴇʀᴏᴋᴜ :</u>**
+🌐**<u>BROADCAST FUNCTION:</u>**
+/broadcast [Message or Reply to a Message] - Broadcast any message to Bot's Served Chats.
 
-/usage » استفاده از داینو در ماه را نشان دهید.
+<u>options for broadcast:</u>
+**-pin** | **-pinloud** | **-user** |
+**-assistant** | **-nobot**
 
-🤓 **<u>دستورات بات:</u>**
+**Example:** `/broadcast -user -assistant -pin Hello Testing`
 
-/restart » ریستارت کردن بات.
+"""
 
-/update » ربات را از نماینده بالادستی به روز می کند.
+HELP_6 = """
+<b><u>Black Pink :</b></u>
 
-/speedtest » بررسی سرعت سرور ربات ها.
+ ⦿ /blackpink - Generates A Blackpink-Style Logo.
+ """
 
-/maintenance [ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ] » حالت نگهداری ربات خود را فعال یا غیرفعال کنید.
+HELP_7 = """
+<b><u>Github :</b></u>
 
-/logger [فعال/غیرفعال] » ربات شروع به ثبت فعالیت های انجام شده در ربات می کند.
+ ⦿ /git [Username] - Get Information About A Github User.
+ ⦿ /github [Username] - Get Information About A Github User.
+ """
 
-/get_log [تعداد خطوط] » گزارش ربات خود را دریافت کنید [مقدار پیش فرض 100 خط است]
+HELP_8 = """
+<b><u>Info :</b></u>
 
-💔 **<u>فقط برای ربات خصوصی :</u>**
+/id : Get The Current Group id. If Used By Replying To A Message, Get That User's ID.
+/info : Get Information About A User.
+"""
 
-/authorize [شناسه کاربر] » امکان چت برای استفاده از ربات را فراهم می کند.
-/unauthorize [شناسه کاربر] » چت مجاز را ممنوع می کند.
-/authorized » لیست چت های مجاز را نشان می دهد.
+HELP_9 = """
+<b><u>Telegraph :</b></u>
 
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ"""
+⦿ /tgm : Uploads A Photo (Under 5ᴍʙ) To The Cloud And Gives A Link.
+"""
 
-HELP_10 = """🤑 **<u>فعال کردن ویدیو چت :</u>**
+HELP_10 = """
+<b><u>Welcome :</b></u>
 
-/activevoice » لیستی از گفتگوهای صوتی فعال در ربات را نشان می دهد.
-/activevideo » لیستی از چت های ویدیویی فعال در ربات را نشان می دهد.
-/autoend [ᴇɴᴀʙʟᴇ|ᴅɪsᴀʙʟᴇ] » اگر یکی در حال گوش دادن است، پایان خودکار جریان را فعال کنید.
+ ⦿ /welcome [ᴏɴ/ᴏғғ] : Special Welcome On In Your Group.
+"""
 
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ"""
 
-HELP_11 = """😅**<u>با ربات شروع کنید</u>**
-/start » ربات موسیقی را شروع می کند.
+HELP_11 = """
+<b><u>AFK :</b></u>
 
-/help » دریافت منوی راهنما با توضیح دستورات.
+⦿ /afk : To Start AFK.
+"""
 
-/reboot » ربات را برای چت شما راه اندازی مجدد می کند.
+HELP_12 = """
+<b><u>Couples :</b></u>
 
-/settings » تنظیمات گروه را با منوی داخلی و تعاملی نشان می دهد.
+⦿ /couples : Get Todays Couples Of The Group In Interactive View.
+"""
 
-/sudolist » کاربران ادمین ربات موسیقی را نشان می دهد.
+HELP_13 = """
+<b><u>Carbon :</b></u>
 
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ"""
-
-HELP_12 = """🤬 **<u>ویژگی ممنوعیت</u>** [فقط برای ادمین ها] :
-
-/gban [ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴄʜᴜᴛɪʏᴀ] » ɢʟᴏʙᴀʟʟʏ ʙᴀɴs ᴛʜᴇ ᴄʜᴜᴛɪʏᴀ ғʀᴏᴍ ᴀʟʟ ᴛʜᴇ sᴇʀᴠᴇᴅ ᴄʜᴀᴛs ᴀɴᴅ ʙʟᴀᴄᴋʟɪsᴛ ʜɪᴍ ғʀᴏᴍ ᴜsɪɴɢ ᴛʜᴇ ʙᴏᴛ.
-
-/ungban [ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴜsᴇʀ] » ɢʟᴏʙᴀʟʟʏ ᴜɴʙᴀɴs ᴛʜᴇ ɢʟᴏʙᴀʟʟʏ ʙᴀɴɴᴇᴅ ᴜsᴇʀ.
-
-/gbannedusers » sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ɢʟᴏʙᴀʟʟʏ ʙᴀɴɴᴇʀ ᴜsᴇʀs.
-
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ"""
-
-HELP_13 = """😻 **<u>ᴍᴏʀᴇ ᴄᴜᴛᴇ ғᴇᴀᴛᴜʀᴇs 😻</u>** 
-
-/tagall , /utag , /ftag » ᴛᴀɢ ᴀʟʟ ᴍᴇᴍʙᴇʀs ᴏɴᴇ ʙʏ ᴏɴᴇ ғᴏʀ ᴠᴄ.
-
-/vctag , /stopvctag » sᴛᴀʀᴛ ᴛᴀɢɢɪɴɢ ғᴏʀ ᴠᴄ ᴏɴᴇ ʙʏ ᴏɴᴇ.
-
-/bin [your cc bins no.] » ᴄʜᴇᴄᴋ ʙɪɴ ᴀᴄᴛɪᴠᴇ ᴏʀ ɴᴏᴛ.
-
-/repo » ᴛᴏ ɢᴇᴛ ᴛʜᴇ ʙᴏᴛ ʀᴇᴘᴏ.
-
-/owner » ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ʙᴏᴛ ᴏᴡɴᴇʀ.
-
-◈ ᴍᴏʀᴇ ғᴇᴀᴛᴜʀᴇs ᴄᴏᴍᴍɪɴɢ sᴏᴏɴ ◈ 
-
-☆..............𝙱𝚈 » [KING Music](https://t.me/musictalk22)..............☆"""
-
+⦿ /carbon : Make a Carbon.
+"""
 
 HELP_14 = """
-<b><u>sᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ</b></u>
+<b><u>Quotly :</b></u>
 
-/song [sᴏɴɢ ɴᴀᴍᴇ/ʏᴛ ᴜʀʟ] : ᴅᴏᴡɴʟᴏᴀᴅ ᴀɴʏ ᴛʀᴀᴄᴋ ғʀᴏᴍ ʏᴏᴜᴛᴜʙᴇ ɪɴ ᴍᴘ3 ᴏʀ ᴍᴘ4 ғᴏʀᴍᴀᴛs.
-
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ
+⦿ /q : Generate Quotly From Message.
 """
 
 HELP_15 = """
-<b><u>sᴘᴇᴇᴅ ᴄᴏᴍᴍᴀɴᴅs :</b></u>
+<b><u>SangMata :</b></u>
 
-ʏᴏᴜ ᴄᴀɴ ᴄᴏɴᴛʀᴏʟ ᴛʜᴇ ᴘʟᴀʏʙᴀᴄᴋ sᴘᴇᴇᴅ ᴏғ ᴛʜᴇ ᴏɴɢᴏɪɴɢ sᴛʀᴇᴀᴍ. [ᴀᴅᴍɪɴs ᴏɴʟʏ]
-
-/speed or /playback : ғᴏʀ ᴀᴅᴊᴜsᴛɪɴɢ ᴛʜᴇ ᴀᴜᴅɪᴏ ᴘʟᴀʏʙᴀᴄᴋ sᴘᴇᴇᴅ ɪɴ ɢʀᴏᴜᴘ.
-/cspeed or /cplayback : ғᴏʀ ᴀᴅᴊᴜsᴛɪɴɢ ᴛʜᴇ ᴀᴜᴅɪᴏ ᴘʟᴀʏʙᴀᴄᴋ sᴘᴇᴇᴅ ɪɴ ᴄʜᴀɴɴᴇʟ.
-
-<b><u>sᴇᴇᴋ sᴛʀᴇᴀᴍ :</b></u>
-
-/seek [ᴅᴜʀᴀᴛɪᴏɴ ɪɴ sᴇᴄᴏɴᴅs] : sᴇᴇᴋ ᴛʜᴇ sᴛʀᴇᴀᴍ ᴛᴏ ᴛʜᴇ ɢɪᴠᴇɴ ᴅᴜʀᴀᴛɪᴏɴ.
-/seekback [ᴅᴜʀᴀᴛɪᴏɴ ɪɴ sᴇᴄᴏɴᴅs] : ʙᴀᴄᴋᴡᴀʀᴅ sᴇᴇᴋ ᴛʜᴇ sᴛʀᴇᴀᴍ ᴛᴏ ᴛʜᴇ ᴛʜᴇ ɢɪᴠᴇɴ ᴅᴜʀᴀᴛɪᴏɴ.
-
-<b><u>sʜᴜғғʟᴇ ᴏ̨ᴜᴇᴜᴇ :</b></u>
-
-/shuffle : sʜᴜғғʟᴇ's ᴛʜᴇ ᴏ̨ᴜᴇᴜᴇ.
-/queue : sʜᴏᴡs ᴛʜᴇ sʜᴜғғʟᴇᴅ ᴏ̨ᴜᴇᴜᴇ.
-
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ
-"""
-
-HELP_16 = """
-<b><u>Aᴄᴛɪᴏɴ :</b></u>
-» ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs ꜰᴏʀ Bᴀɴs & Mᴜᴛᴇ :
-
- ❍ /kickme: kicks the user who issued the command
-
-Admins only:
- ❍ /ban <userhandle>: bans a user. (via handle, or reply)
- ❍ /sban <userhandle>: Silently ban a user. Deletes command, Replied message and doesn't reply. (via handle, or reply)
- ❍ /tban <userhandle> x(m/h/d): bans a user for x time. (via handle, or reply). m = minutes, h = hours, d = days.
- ❍ /unban <userhandle>: unbans a user. (via handle, or reply)
- ❍ /kick <userhandle>: kicks a user out of the group, (via handle, or reply)
- ❍ /mute <userhandle>: silences a user. Can also be used as a reply, muting the replied to user.
- ❍ /tmute <userhandle> x(m/h/d): mutes a user for x time. (via handle, or reply). m = minutes, h = hours, d = days.
- ❍ /unmute <userhandle>: unmutes a user. Can also be used as a reply, muting the replied to user.
-__
-𝐒ᴘᴇᴄɪᴀʟ 𝐂ᴏᴍᴍᴀɴᴅs 𝐒ᴜᴘᴘᴏʀᴛ 𝐀ʟʟ 𝐄xᴀᴍᴘʟᴇ  - 𝚈𝚞𝚖𝚒 𝚋𝚊𝚗 𝚈𝚞𝚖𝚒 𝚖𝚞𝚝𝚎 𝚈𝚞𝚖𝚒 𝚙𝚛𝚘𝚖𝚘𝚝𝚎 ..... 𝚎𝚝𝚌
-
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ
-"""
-
-
-HELP_17 = """
-<b><u>sᴛɪᴄᴋᴇʀs :</b></u>
-
-/packkang ➠ ᴄʀᴇᴀᴛᴇs ᴀ ᴘᴀᴄᴋ ᴏғ sᴛɪᴄᴋᴇʀs ғʀᴏᴍ ᴀ ᴏᴛʜᴇʀ ᴘᴀᴄᴋ.
-/stickerid ➠ ɢᴇᴛs ᴛʜᴇ sᴛɪᴄᴋᴇʀ ɪᴅ ᴏғ ᴀ sᴛɪᴄᴋᴇʀ.
-
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ
-"""
-
-HELP_18 = """
-<b><u>sʜᴀʏʀɪ :</b></u>
-
-/shayri , /love , /gf , /bf » 𝙶𝙴𝚃 𝚂𝙷𝙰𝚈𝚁𝙸 𝙵𝙾𝚁 𝚈𝙾𝚄𝚁 𝙿𝙰𝚁𝚃𝙽𝙴𝚁..
-
-/gali » ɢᴇᴛ sᴏᴍᴇ ɢᴀʟɪ sᴇɴᴛᴇɴᴄᴇs ғᴏʀ ᴀʙᴜsᴇ ᴀɴʏᴏᴊᴇ [ʙᴏᴛ ᴘᴍ]
-
-/vcraid » ᴄᴏᴍᴍɪɴɢ sᴏᴏɴ.
- 
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ
- """
-
-HELP_19 = """
-<b><u>Iɴꜰᴏ :</b></u>
-
-/id : ɢᴇᴛ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ɢʀᴏᴜᴘ ɪᴅ. ɪғ ᴜsᴇᴅ ʙʏ ʀᴇᴘʟʏɪɴɢ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ, ɢᴇᴛs ᴛʜᴀᴛ ᴜsᴇʀ's ɪᴅ.
-/info : ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴜsᴇʀ.
-/github <ᴜsᴇʀɴᴀᴍᴇ> : ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ɢɪᴛʜᴜʙ ᴜsᴇʀ.
-
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ
-"""
-HELP_20 = """
-<b><u>Gʀᴏᴜᴘ :</b></u>
-ᴛʜᴇsᴇ ᴀʀᴇ ᴛʜᴇ ᴀᴠᴀɪʟᴀʙʟᴇ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ᴄᴏᴍᴍᴀɴᴅs:
-
-⦿ /pin ➠ ᴘɪɴs ᴀ ᴍᴇssᴀɢᴇ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ.
-⦿ /pinned ➠ ᴅɪsᴘʟᴀʏs ᴛʜᴇ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ.
-⦿ /unpin ➠ ᴜɴᴘɪɴs ᴛʜᴇ ᴄᴜʀʀᴇɴᴛʟʏ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇ.
-⦿ /staff ➠ ᴅɪsᴘʟᴀʏs ᴛʜᴇ ʟɪsᴛ ᴏғ sᴛᴀғғ ᴍᴇᴍʙᴇʀs.
-⦿ /bots ➠ ᴅɪsᴘʟᴀʏs ᴛʜᴇ ʟɪsᴛ ᴏғ ʙᴏᴛs ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ.
-⦿ /settitle ➠ sᴇᴛs ᴛʜᴇ ᴛɪᴛʟᴇ ᴏғ ᴛʜᴇ ɢʀᴏᴜᴘ.
-⦿ /setdiscription ➠ sᴇᴛs ᴛʜᴇ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ ᴏғ ᴛʜᴇ ɢʀᴏᴜᴘ.
-⦿ /setphoto ➠ sᴇᴛs ᴛʜᴇ ɢʀᴏᴜᴘ ᴘʜᴏᴛᴏ.
-⦿ /removephoto ➠ ʀᴇᴍᴏᴠᴇs ᴛʜᴇ ɢʀᴏᴜᴘ ᴘʜᴏᴛᴏ.
-⦿ /zombies ➠ ʀᴇᴍᴏᴠᴇs ᴀᴄᴄ ᴅᴇʟᴇᴛᴇᴅ ᴍᴇᴍʙᴇʀs ғʀᴏᴍ ᴛʜᴇ ɢʀᴏᴜᴘ.
-⦿ /imposter ᴏɴ/ᴏғғ ➠ ᴛᴜʀɴs ᴏɴ ᴏʀ ᴏғғ ᴛʜᴇ ᴡᴀᴛᴄʜᴇʀ ғᴏʀ ʏᴏᴜʀ ɢʀᴏᴜᴘ, ᴡʜɪᴄʜ ɴᴏᴛɪғɪᴇs ᴀʙᴏᴜᴛ ᴜsᴇʀs ᴡʜᴏ ᴄʜᴀɴɢᴇ ᴛʜᴇɪʀ ɴᴀᴍᴇ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ.
-
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ
-"""
-HELP_21 = """
-<b><u>Exᴛʀᴀ :</b></u>
-
-⦿ /math ➠ sᴏʟᴠᴇs ᴍᴀᴛʜᴇᴍᴀᴛɪᴄᴀʟ ᴘʀᴏʙʟᴇᴍs ᴀɴᴅ ᴇǫᴜᴀᴛɪᴏɴs.
-⦿ /blackpink ➠ ɢᴇɴᴇʀᴀᴛᴇs ᴀ ʙʟᴀᴄᴋᴘɪɴᴋ-sᴛʏʟᴇ ʟᴏɢᴏ.
-⦿ /carbon ➠ ɢᴇɴᴇʀᴀᴛᴇs ᴀ ᴄᴀʀʙᴏɴ ᴄᴏᴅᴇ ɪᴍᴀɢᴇ ғʀᴏᴍ ᴀ ᴄᴏᴅᴇ sɴɪᴘᴘᴇᴛ.
-⦿ /speedtest ➠ ᴍᴇᴀsᴜʀᴇs ᴛʜᴇ ɪɴᴛᴇʀɴᴇᴛ sᴘᴇᴇᴅ.
-⦿ /reverse ➠ ʀᴇᴠᴇʀsᴇs ᴀ ɢɪᴠᴇɴ ᴛᴇxᴛ.
-⦿ /webss ➠ ᴛᴀᴋᴇs ᴀ sᴄʀᴇᴇɴsʜᴏᴛ ᴏғ ᴀ ᴡᴇʙsɪᴛᴇ.
-⦿ /paste ➠ ᴜᴘʟᴏᴀᴅs ᴀ ᴛᴇxᴛ sɴɪᴘᴘᴇᴛ ᴛᴏ ᴛʜᴇ ᴄʟᴏᴜᴅ ᴀɴᴅ ɢɪᴠᴇs ᴀ ʟɪɴᴋ.
-⦿ /tgm ➠ ᴜᴘʟᴏᴀᴅs ᴀ ᴘʜᴏᴛᴏ (ᴜɴᴅᴇʀ 𝟻ᴍʙ) ᴛᴏ ᴛʜᴇ ᴄʟᴏᴜᴅ ᴀɴᴅ ɢɪᴠᴇs ᴀ ʟɪɴᴋ.
-⦿ /tr ➠ ᴛʀᴀɴsʟᴀᴛᴇs ᴛᴇxᴛ.
-⦿ /google ➠ sᴇᴀʀᴄʜᴇs ғᴏʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴏɴ ɢᴏᴏɢʟᴇ.
-⦿ /stack ➠ sᴇᴀʀᴄʜᴇs ғᴏʀ ᴘʀᴏɢʀᴀᴍᴍɪɴɢ-ʀᴇʟᴀᴛᴇᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴏɴ sᴛᴀᴄᴋ ᴏᴠᴇʀғʟᴏᴡ.
-
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ
-"""
-HELP_22 = """
-<b><u>Iᴍᴀɢᴇ :</b></u>
-ᴛʜᴇsᴇ ᴀʀᴇ ᴛʜᴇ ᴀᴠᴀɪʟᴀʙʟᴇ ɪᴍᴀɢᴇ ᴄᴏᴍᴍᴀɴᴅs:
-
-⦿ /draw ➠ ɢᴇɴᴇʀᴀᴛᴇs ᴀ ᴅʀᴀᴡɪɴɢ ʙᴀsᴇᴅ ᴏɴ ᴀ ɢɪᴠᴇɴ ᴘᴏʀᴏᴍᴘᴛ.
-⦿ /image ➠ sᴇᴀʀᴄʜᴇs ғᴏʀ ᴀɴ ɪᴍᴀɢᴇ ʙᴀsᴇᴅ ᴏɴ ᴀ ɢɪᴠᴇɴ ᴋᴇʏᴡᴏʀᴅ.
-⦿ /upscale ➠ ʀᴇᴘʟʏ ᴛᴏ ᴀɴ ɪᴍᴀɢᴇ ᴛᴏ ᴜᴘsᴄᴀʟᴇ ɪᴛ ᴀɴᴅ ɪᴍᴘʀᴏᴠᴇ ɪᴛs ǫᴜᴀʟɪᴛʏ.
-
-ᴀɪᴜ ダ ʀᴏʙᴏᴛ
+⦿ /sg : To Check History Name.
 """
